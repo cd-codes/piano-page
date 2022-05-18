@@ -1,4 +1,8 @@
 const keys = document.querySelectorAll('.key');
+const SONG_NOTES = ["d3", "g3", "a-4", "d4", "d4", "c4", "a-4", "a4", "a-4",
+     "g3", "a-4", "d4", "g4", "g4", "g4", "f4", "d-4", "f4",
+     "a4", "d4", "f4", "a5", "g4", "f4", "e4", "f4", "g4", "f4", "e4",
+     "d4", "c4", "a-4", "c4", "d4", "c4", "g3", "a4"];
 
 keys.forEach(key => {
     key.addEventListener('click', () => playNote(key));
@@ -13,3 +17,12 @@ function playNote(key) {
         key.classList.remove('active');
     })
 }
+
+/*
+user clicks the start song button
+
+for each song note,
+turn the highlight on,
+turn the highligh off when the note is clicked,
+go to the next song note
+*/
