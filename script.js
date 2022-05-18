@@ -17,3 +17,12 @@ function playNote(key) {
         key.classList.remove('active');
     })
 }
+
+/*
+user clicks the start song button
+
+for each song note,
+turn the highlight on,
+turn the highligh off when the note is clicked,
+go to the next song note
+*/
