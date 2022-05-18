@@ -31,6 +31,20 @@ body {
     color: #333;
 }
 
+.chord-buttons {
+    width: 700px;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chord-button {
+    height: 1.5em;
+    line-height: 1.5em;
+    margin: 0 0.2em;
+}
+
 .piano {
     display: flex;
 }
