@@ -63,3 +63,7 @@ body {
 .black.active {
     background-color: #333;
 }
+
+.key.next-note {
+    border: 1px solid limegreen;
+}
