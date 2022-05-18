@@ -3,6 +3,7 @@ const keys = document.querySelectorAll('.key');
 //      "g3", "a-4", "d4", "g4", "g4", "g4", "f4", "d-4", "f4",
 //      "a4", "d4", "f4", "a5", "g4", "f4", "e4", "f4", "g4", "f4", "e4",
 //      "d4", "c4", "a-4", "c4", "d4", "c4", "g3", "a4"];
+const chordButtons = document.querySelectorAll('.chord-button');
 const cMajor = ["c3", "e3", "g3", "c4"];
 const gMajor = ["g3", "b4", "d4", "g4"];
 const dMajor = ["d3", "f-3", "a4", "d4"];
@@ -30,7 +31,62 @@ function playNote(key) {
     })
 }
 
-function chordTest(chord) {
+chordButtons.forEach(button => {
+    button.addEventListener('click', () => startTutorial(button));
+    // let chordName = getChordName(button.id);
+    // chordTest(chordName);
+})
+
+function startTutorial(button) {
+    let chordName = getChordName(button.id);
+    chordTutorial(chordName);
+}
+
+function getChordName(chordName) {
+    switch(chordName) {
+        case "cMajor":
+            return cMajor;
+            break;
+        case "gMajor":
+            return gMajor;
+            break;
+        case "dMajor":
+            return dMajor;
+            break;
+        case "aMajor":
+            return aMajor;
+            break;
+        case "eMajor":
+            return eMajor;
+            break;
+        case "bMajor":
+            return bMajor;
+            break;
+        case "fsMajor":
+            return fsMajor;
+            break;
+        case "csMajor":
+            return csMajor;
+            break;
+        case "afMajor":
+            return afMajor;
+            break;
+        case "efMajor":
+            return efMajor;
+            break;
+        case "bfMajor":
+            return bfMajor;
+            break;
+        case "fMajor":
+            return fMajor;
+            break;
+    }
+}
+
+function chordTutorial(chord) {
+    keys.forEach(key => {
+        key.classList.remove("note-highlight");
+    })
     chord.forEach(note => {
         keys.forEach(key => {
             if(key.dataset.note == note) {
@@ -42,8 +98,6 @@ function chordTest(chord) {
         })
     })
 }
-
-chordTest(fMajor);
 
 /*
 user clicks on a chord button
