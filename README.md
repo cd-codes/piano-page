@@ -16,3 +16,6 @@ Some challenges that I anticipate:
 1. Choosing to implement the tutorial by note or by measure
 2. Spacing the text elements on the page around the piano element
 3. Testing the responsiveness of the page on a rotated mobile screen
+---
+UPDATE: After trying different algorithms to implement tutorial functionality on a feature branch, I coded in a bug that advances the tutorial in unintended ways. I am working on a solution and am planning to return to this functionality using React to manage the states of the keys rather than misuing recursion.
+In the meantime, I will work on implementing a feature that highlights the keys to show how to play arpeggios in different keys.
