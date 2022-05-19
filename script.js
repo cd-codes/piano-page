@@ -4,6 +4,7 @@ const keys = document.querySelectorAll('.key');
 //      "a4", "d4", "f4", "a5", "g4", "f4", "e4", "f4", "g4", "f4", "e4",
 //      "d4", "c4", "a-4", "c4", "d4", "c4", "g3", "a4"];
 const chordButtons = document.querySelectorAll('.chord-button');
+const reset = document.getElementById("reset-button");
 const cMajor = ["c3", "e3", "g3", "c4"];
 const gMajor = ["g3", "b4", "d4", "g4"];
 const dMajor = ["d3", "f-3", "a4", "d4"];
@@ -30,6 +31,8 @@ function playNote(key) {
         key.classList.remove('active');
     })
 }
+
+reset.addEventListener('click', () => clearAllKeys());
 
 chordButtons.forEach(button => {
     button.addEventListener('click', () => startTutorial(button));
@@ -84,9 +87,7 @@ function getChordName(chordName) {
 }
 
 function chordTutorial(chord) {
-    keys.forEach(key => {
-        key.classList.remove("note-highlight");
-    })
+    clearAllKeys();
     chord.forEach(note => {
         keys.forEach(key => {
             if(key.dataset.note == note) {
@@ -96,6 +97,12 @@ function chordTutorial(chord) {
                 })
             }
         })
+    })
+}
+
+function clearAllKeys() {
+    keys.forEach(key => {
+        key.classList.remove("note-highlight");
     })
 }
 
