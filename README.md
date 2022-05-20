@@ -6,7 +6,7 @@ For this project, my goal is to expand on the original implementation:
 2. *Add a header to the page*
 3. *Add a Circle of Fifths tutorial mode where a user can play through the circle of fifths*
 4. *Allow the user to reset or switch the tutorial at any point*
-5. Add a footer with credits for the original project inspiration and the source for the note mp3 files
+5. *Add a footer with credits for the original project inspiration and the source for the note mp3 files*
 6. Incorporte modern styling elements on the page
 ---
 In the future, I would like to expand this project to add a song tutorial mode. Challenges that I anticipate:
