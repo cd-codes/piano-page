@@ -81,3 +81,18 @@ body {
 .note-highlight {
     border: 3px solid limegreen;
 }
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+}
+
+.credits {
+    text-align: center;
+    color: #CCC;
+}
+
+.credit-link {
+    text-decoration: underline;
+    color: #CCC;
+}
