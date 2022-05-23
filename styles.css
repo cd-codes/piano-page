@@ -4,13 +4,14 @@
 
 body {
     /*background-color: #143F68;*/
-    background-color: hsl(29, 21%, 91%);
+    background-color: #ede8e3;
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Red Hat Display', Arial, sans-serif;
 }
 
 .header {
@@ -24,12 +25,20 @@ body {
 }
 
 .page-title {
-    color: #CCC;
+    color: #333;
 }
 
-.reset-button {
-    height: 2em;
-    color: #333;
+.button {
+    color: #fff;
+    background-color: #cc7a2d;
+    border-style: none;
+    font-family: 'Red Hat Display';
+}
+
+.reset {
+    padding: 10px;
+    font-size: 1.5em;
+    border-radius: 16px;
 }
 
 .chord-buttons {
@@ -38,12 +47,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 
-.chord-button {
-    height: 1.5em;
+.chord {
     line-height: 1.5em;
+    width: 2.5em;
     margin: 0 0.2em;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.2em;
 }
 
 .piano {
@@ -58,7 +71,13 @@ body {
 .white {
     --width: 50px;
     background-color: white;
-    border: 1px solid #333;
+    border-top: 3px solid #333;
+    border-right: 3px solid #333;
+    border-bottom: 3px solid #333;
+}
+
+.white:nth-child(1) {
+    border-left: 3px solid #333;
 }
 
 .white.active {
@@ -67,7 +86,7 @@ body {
 
 .black {
     --width: 26px;
-    background-color: black;
+    background-color: #000;
     margin-left: calc(var(--width) / -2);
     margin-right: calc(var(--width) / -2);
     z-index: 2;
@@ -90,10 +109,10 @@ body {
 
 .credits {
     text-align: center;
-    color: #CCC;
+    color: #333;
 }
 
 .credit-link {
     text-decoration: underline;
-    color: #CCC;
+    color: #333;
 }
