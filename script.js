@@ -3,7 +3,7 @@ const keys = document.querySelectorAll('.key');
 //      "g3", "a-4", "d4", "g4", "g4", "g4", "f4", "d-4", "f4",
 //      "a4", "d4", "f4", "a5", "g4", "f4", "e4", "f4", "g4", "f4", "e4",
 //      "d4", "c4", "a-4", "c4", "d4", "c4", "g3", "a4"];
-const chordButtons = document.querySelectorAll('.chord-button');
+const chordButtons = document.querySelectorAll('.chord');
 const reset = document.getElementById("reset-button");
 const cMajor = ["c3", "e3", "g3", "c4"];
 const gMajor = ["g3", "b4", "d4", "g4"];
