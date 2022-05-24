@@ -22,6 +22,9 @@ keys.forEach(key => {
     key.addEventListener('click', () => playNote(key));
 });
 
+//test removing unavailable from reset
+//reset.classList.remove("unavailable");
+
 function playNote(key) {
     const noteAudio = document.getElementById(key.dataset.note);
     noteAudio.currentTime = 0;
@@ -44,7 +47,8 @@ function hideNote(key) {
     }
 }
 
-reset.addEventListener('click', () => clearAllKeys());
+//reset.addEventListener('click', () => clearAllKeys());
+reset.addEventListener('click', () => resetPiano());
 
 chordButtons.forEach(button => {
     button.addEventListener('click', () => startTutorial(button));
@@ -53,6 +57,7 @@ chordButtons.forEach(button => {
 })
 
 function startTutorial(button) {
+    reset.classList.remove("unavailable");
     let chordName = getChordName(button.id);
     chordTutorial(chordName);
 }
@@ -109,6 +114,7 @@ function chordTutorial(chord) {
                 key.addEventListener('click', () => {
                     key.classList.remove("note-highlight");
                     hideNote(key);
+                    unavailableReset();
                 })
             }
         })
@@ -122,6 +128,28 @@ function clearAllKeys() {
     })
 }
 
+function resetPiano() {
+    clearAllKeys();
+    reset.classList.add("unavailable");
+}
+
+function unavailableReset() {
+    let flag = false;
+    //iterate through the keys
+    //if a key is highlighted positive flag
+    //if no key highlighted negative flag
+    //if positive flag do nothing
+    //if negative flag make reset unavailable
+    keys.forEach(key => {
+        if(key.classList.contains("note-highlight")) {
+            flag = true;
+        }
+    })
+    if (!flag) {
+        reset.classList.add("unavailable");
+    }
+}
+
 /*
 user clicks on a chord button
 the relevant keys highlight in green
@@ -129,4 +157,13 @@ as the user clicks a key, the highlight goes away
 the user can click the reset keys button at the top to turn off all highlights
 the user can click the same chord button again to rehighlight all the keys
 the user can click any other chord button and the highlighted keys will switch to the keys for that chord
+*/
+/*
+when the page first loads, reset button is greyed out
+when user clicks on a chord button and starts the tutorial,
+the reset button becomes available
+so long as any key still has the note-highlight class in their list classList.contains("")
+reset button stays available
+if all keys do not have note-highlight in their classlist
+then reset button becomes unavailable
 */
