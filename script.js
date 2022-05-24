@@ -32,6 +32,18 @@ function playNote(key) {
     })
 }
 
+function showNote(key) {
+    if (key.children.length > 0) {
+        key.children[0].style.display = "block";
+    }
+}
+
+function hideNote(key) {
+    if (key.children.length > 0) {
+        key.children[0].style.display = "none";
+    }
+}
+
 reset.addEventListener('click', () => clearAllKeys());
 
 chordButtons.forEach(button => {
@@ -92,8 +104,11 @@ function chordTutorial(chord) {
         keys.forEach(key => {
             if(key.dataset.note == note) {
                 key.classList.add("note-highlight");
+                //show the note
+                showNote(key);
                 key.addEventListener('click', () => {
                     key.classList.remove("note-highlight");
+                    hideNote(key);
                 })
             }
         })
@@ -103,6 +118,7 @@ function chordTutorial(chord) {
 function clearAllKeys() {
     keys.forEach(key => {
         key.classList.remove("note-highlight");
+        hideNote(key);
     })
 }
 
