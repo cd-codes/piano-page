@@ -48,6 +48,11 @@ body {
     border-radius: 16px;
 }
 
+.reset.unavailable {
+    background-color: #aaa;
+    cursor: default;
+}
+
 .chord-buttons {
     width: 700px;
     height: 2em;
