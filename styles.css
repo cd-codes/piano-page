@@ -33,6 +33,13 @@ body {
     background-color: #cc7a2d;
     border-style: none;
     font-family: 'Red Hat Display';
+    transition: background-color 250ms;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #dc9552;
+    transition: background-color 250ms;
 }
 
 .reset {
