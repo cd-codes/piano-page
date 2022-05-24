@@ -68,8 +68,33 @@ body {
     width: var(--width);
 }
 
+.key-label-white {
+    display: none;
+    text-align: center;
+    position: absolute;
+    width: 50px;
+    height: 2em;
+    margin: 0 auto;
+    bottom: 1em;
+    color: #888;
+    font-weight: 700;
+}
+
+.key-label-black {
+    display: none;
+    text-align: center;
+    position: absolute;
+    width: 26px;
+    height: 2em;
+    margin: 0 auto;
+    bottom: 1em;
+    color: #888;
+    font-weight: 700;
+}
+
 .white {
     --width: 50px;
+    position: relative;
     background-color: white;
     border-top: 3px solid #333;
     border-right: 3px solid #333;
@@ -88,6 +113,7 @@ body {
 
 .black {
     --width: 26px;
+    position: relative;
     background-color: #000;
     margin-left: calc(var(--width) / -2);
     margin-right: calc(var(--width) / -2);
