@@ -70,6 +70,10 @@ body {
     display: flex;
 }
 
+.piano:hover {
+    cursor: pointer;
+}
+
 .key {
     height: calc(var(--width) * 4);
     width: var(--width);
