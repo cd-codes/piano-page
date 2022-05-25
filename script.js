@@ -18,6 +18,18 @@ keys.forEach(key => {
     key.addEventListener('click', () => playNote(key));
 });
 
+chordButtons.forEach(button => {
+    button.addEventListener('click', () => startTutorial(button));
+})
+
+reset.addEventListener('click', () => resetPiano());
+
+/*  This function playNote() created by WebDevSimplified
+
+    For a key, play the audio file associated with that key
+    Start the audio file over each time key is clicked
+    Key background-color changes while audio file is played  
+    https://github.com/WebDevSimplified/JavaScript-Piano    */
 function playNote(key) {
     const noteAudio = document.getElementById(key.dataset.note);
     noteAudio.currentTime = 0;
@@ -28,30 +40,16 @@ function playNote(key) {
     })
 }
 
-function showNote(key) {
-    if (key.children.length > 0) {
-        key.children[0].style.display = "block";
-    }
-}
-
-function hideNote(key) {
-    if (key.children.length > 0) {
-        key.children[0].style.display = "none";
-    }
-}
-
-reset.addEventListener('click', () => resetPiano());
-
-chordButtons.forEach(button => {
-    button.addEventListener('click', () => startTutorial(button));
-})
-
+/*  For a chord button, activate the reset button
+    Call to getChordName() to get the array of notes
+    Call to chordTutorial() to highlight the corresponding keys */
 function startTutorial(button) {
     reset.classList.remove("unavailable");
     let chordName = getChordName(button.id);
     chordTutorial(chordName);
 }
 
+/*  For a chord name get the corresponding array of notes   */
 function getChordName(chordName) {
     switch(chordName) {
         case "cMajor":
@@ -93,6 +91,15 @@ function getChordName(chordName) {
     }
 }
 
+/*  For an array of notes representing a chord,
+    call to clearAllKeys() to remove highlight from any keys
+    that remain highlighted.
+    Iterate over array of notes and for each note,
+    find the corresponding key, highlight that key,
+    and call to showNote() to reveal the label.
+    If the highlighted key is then clicked, remove the highlight,
+    call to hideNote() to hide the label,
+    call to unavailableReset()                                   */
 function chordTutorial(chord) {
     clearAllKeys();
     chord.forEach(note => {
@@ -110,6 +117,8 @@ function chordTutorial(chord) {
     })
 }
 
+/*  Remove highlight from all keys.
+    Call to hideNote() to hide all labels */
 function clearAllKeys() {
     keys.forEach(key => {
         key.classList.remove("note-highlight");
@@ -117,18 +126,24 @@ function clearAllKeys() {
     })
 }
 
-function resetPiano() {
-    clearAllKeys();
-    reset.classList.add("unavailable");
+/*  For a key, reveal the label  */
+function showNote(key) {
+    if (key.children.length > 0) {
+        key.children[0].style.display = "block";
+    }
 }
 
+/*  For a key, hide the label  */
+function hideNote(key) {
+    if (key.children.length > 0) {
+        key.children[0].style.display = "none";
+    }
+}
+
+/*  Check that all keys are not highlighted
+    If true, make reset button unavailable */
 function unavailableReset() {
     let flag = false;
-    //iterate through the keys
-    //if a key is highlighted positive flag
-    //if no key highlighted negative flag
-    //if positive flag do nothing
-    //if negative flag make reset unavailable
     keys.forEach(key => {
         if(key.classList.contains("note-highlight")) {
             flag = true;
@@ -137,4 +152,11 @@ function unavailableReset() {
     if (!flag) {
         reset.classList.add("unavailable");
     }
+}
+
+/*  Call to clearAllKeys()
+    Make reset button unavailable */
+function resetPiano() {
+    clearAllKeys();
+    reset.classList.add("unavailable");
 }
