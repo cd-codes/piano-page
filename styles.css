@@ -36,10 +36,9 @@ body {
     transition: background-color 250ms;
 }
 
-/* Need to update hover state color to improve accesibility */
 .button:hover {
     cursor: pointer;
-    background-color: #dc9552;
+    background-color: #984d06;
     transition: background-color 250ms;
 }
 
@@ -49,7 +48,6 @@ body {
     border-radius: 16px;
 }
 
-/* Need to find a way to inform user button is in unavailable state */
 .reset.unavailable {
     background-color: #aaa;
     cursor: default;
@@ -64,7 +62,6 @@ body {
     padding: 2rem;
 }
 
-/* Find a way to make the C chord button the first one that gets focused */
 .chord {
     line-height: 1.5em;
     width: 2.5em;
@@ -82,13 +79,11 @@ body {
     cursor: pointer;
 }
 
-/* Need to name the keys so screenreader can tell what the name of the key is */
 .key {
     height: calc(var(--width) * 4);
     width: var(--width);
 }
 
-/* Need to improve contrast */
 .key-label-white {
     display: none;
     text-align: center;
@@ -97,11 +92,10 @@ body {
     height: 2em;
     margin: 0 auto;
     bottom: 1em;
-    color: #888;
+    color: #555;
     font-weight: 700;
 }
 
-/* Need to improve contrast */
 .key-label-black {
     display: none;
     text-align: center;
@@ -110,7 +104,7 @@ body {
     height: 2em;
     margin: 0 auto;
     bottom: 1em;
-    color: #888;
+    color: #bbb;
     font-weight: 700;
 }
 
