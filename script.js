@@ -18,6 +18,17 @@ keys.forEach(key => {
     key.addEventListener('click', () => playNote(key));
 });
 
+/*  Add keypress listener to allow notes to be played 
+    by pressing Enter when a key is focused    */
+keys.forEach(key => {
+    key.addEventListener('keypress', e => {
+        if(e.key === 'Enter') {
+            e.preventDefault();
+            playNote(key);
+        }
+    })
+})
+
 chordButtons.forEach(button => {
     button.addEventListener('click', () => startTutorial(button));
 })
