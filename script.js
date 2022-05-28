@@ -124,6 +124,14 @@ function chordTutorial(chord) {
                     hideNote(key);
                     unavailableReset();
                 })
+                key.addEventListener('keypress', e => {
+                    if(e.key === 'Enter') {
+                        e.preventDefault();
+                        key.classList.remove("note-highlight");
+                        hideNote(key);
+                        unavailableReset();
+                    }
+                })
             }
         })
     })
