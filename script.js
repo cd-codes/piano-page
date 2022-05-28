@@ -56,6 +56,7 @@ function playNote(key) {
     Call to chordTutorial() to highlight the corresponding keys */
 function startTutorial(button) {
     reset.classList.remove("unavailable");
+    reset.setAttribute('aria-disabled', 'false');
     let chordName = getChordName(button.id);
     chordTutorial(chordName);
 }
@@ -162,6 +163,7 @@ function unavailableReset() {
     })
     if (!flag) {
         reset.classList.add("unavailable");
+        reset.setAttribute('aria-disabled', 'true');
     }
 }
 
@@ -170,4 +172,5 @@ function unavailableReset() {
 function resetPiano() {
     clearAllKeys();
     reset.classList.add("unavailable");
+    reset.setAttribute('aria-disabled', 'true');
 }
