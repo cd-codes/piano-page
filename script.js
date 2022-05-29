@@ -109,7 +109,8 @@ function getChordName(chordName) {
     Iterate over array of notes and for each note,
     find the corresponding key, highlight that key,
     and call to showNote() to reveal the label.
-    If the highlighted key is then clicked, remove the highlight,
+    If the highlighted key is then clicked or activated
+    using the enter key, remove the highlight,
     call to hideNote() to hide the label,
     call to unavailableReset()                                   */
 function chordTutorial(chord) {

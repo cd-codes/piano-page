@@ -108,7 +108,6 @@ body {
     font-weight: 700;
 }
 
-/* Need to find a way to inform user that key is in highlighted state */
 .note-highlight {
     box-shadow: inset 0 -2px 0px 3px #51d53f;
     transition: box-shadow 200ms;
