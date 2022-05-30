@@ -1,5 +1,4 @@
-#Playable Piano with Circle of Fifths Tutorial Mode
----
+# Playable Piano with Circle of Fifths Tutorial Mode
 This is a playable browser-based 24-key Piano that includes tutorials on how to play the major chords in the Circle of Fifths.
 
 The tutorial button for each major chord will highlight the keys that make up the chord, and there is a reset button to return all of the keys to normal.
